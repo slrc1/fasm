@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import os,sys
+import os,sys,subprocess
 from .models import Greeting
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Hello from Python!\n'+str(sys.platform)+'\n'+str(os.name)+'\n'+str(os.system('ls -l')))
+    return HttpResponse('Hello from Python!<br>'+str(subprocess.getoutput('fasm')))
     return render(request, 'index.html')
 
 
