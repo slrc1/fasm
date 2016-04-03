@@ -5,6 +5,7 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
+    s()
     return HttpResponse('Hello from Python!<br>'+str(commands.getoutput('tar fasm-1.71.51.tar')))
     return render(request, 'index.html')
 
