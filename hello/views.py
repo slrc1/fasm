@@ -9,6 +9,12 @@ def index(request):
     return HttpResponse(s+'<br>Hello from Python!<br>'+str(commands.getoutput(s)))
     return render(request, 'index.html')
 
+def compileasm(request):
+    d = str(request.GET['data'])
+    os.system('chmod a+x fasm/fasm')
+    with open('file.asm') as f:
+        f.write(d)
+    return HttpResponse(commands.getoutput('fasm file.asm'))
 
 def db(request):
 
@@ -18,4 +24,4 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})
-
+    
