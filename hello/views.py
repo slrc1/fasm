@@ -12,9 +12,9 @@ def index(request):
 def compileasm(request):
     d = str(request.GET['data'])
     os.system('chmod a+x fasm/fasm')
-    with open('file.asm','w') as f:
+    with open('fasm/file.asm','w') as f:
         f.write(d)
-    return HttpResponse(commands.getoutput('fasm/fasm file.asm'))
+    return HttpResponse(commands.getoutput('fasm/fasm fasm/file.asm'))
 
 def runasm(request):
     fn = str(request.GET['file'])
