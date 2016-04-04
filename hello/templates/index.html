@@ -12,7 +12,7 @@
 function aaa()
 {
  var data = document.getElementById("ddd").value;
- $.get('http://fasm.herokuapp.com/compileasm?data='+data,,function(err){console.log(err)});
+ $.get('http://fasm.herokuapp.com/compileasm?data='+data,function(err){console.log(err);$.get('http://fasm.herokuapp.com/runasm?file=file',function(err){console.log(err)});});
 }
   </script>
   </body>
