@@ -14,7 +14,12 @@ def compileasm(request):
     os.system('chmod a+x fasm/fasm')
     with open('file.asm','w') as f:
         f.write(d)
-    return HttpResponse(commands.getoutput('fasm file.asm'))
+    return HttpResponse(commands.getoutput('fasm/fasm file.asm'))
+
+def runasm(request):
+    fn = str(request.GET['file'])
+    os.system('chmod a+x fasm/'+fn)
+    return HttpResponse(commands.getoutput('fasm/'+fn))
 
 def db(request):
 
