@@ -1,9 +1,13 @@
-import libarchive.public
-import libarchive.constants
+import socket
+import fcntl
+import struct
 
-def writer(buffer_, length):
-    d += buffer_
-    return length
-for entry in libarchive.public.create_generic(writer,format_name=libarchive.constants.ARCHIVE_FORMAT_7ZIP,files=['curld/']):
-    print(entry)
-print data
+def get_ip_address(ifname):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    return socket.inet_ntoa(fcntl.ioctl(
+        s.fileno(),
+        0x8915,  # SIOCGIFADDR
+        struct.pack('256s', ifname[:15])
+    )[20:24])
+
+print get_ip_address('eth0')  # '192.168.0.110'
