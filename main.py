@@ -10,4 +10,37 @@ def get_ip_address(ifname):
         struct.pack('256s', ifname[:15])
     )[20:24])
 
-print get_ip_address('eth0')  # '192.168.0.110'
+print get_ip_address('eth0') 
+import socket
+import sys
+ 
+HOST = ''   # Symbolic name, meaning all available interfaces
+PORT = 80 # Arbitrary non-privileged port
+ 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print 'Socket created'
+ 
+#Bind socket to local host and port
+try:
+    s.bind((HOST, PORT))
+except socket.error as msg:
+    print 'Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1]
+    sys.exit()
+     
+print 'Socket bind complete'
+ 
+#Start listening on socket
+s.listen(10)
+print 'Socket now listening'
+ 
+#now keep talking with the client
+while 1:
+    #wait to accept a connection - blocking call
+    conn, addr = s.accept()
+    print 'Connected with ' + addr[0] + ':' + str(addr[1])
+     
+s.close()
+
+
+
+
