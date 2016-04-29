@@ -25,6 +25,11 @@ def runasm(request):
     os.system('chmod a+x fasm/'+fn)
     return HttpResponse(commands.getoutput('fasm/'+fn))
 
+def ts2wmv(request):
+    fn = str(request.GET['data'])
+    ret = fn
+    return HttpResponse(ret)
+
 def db(request):
 
     greeting = Greeting()
