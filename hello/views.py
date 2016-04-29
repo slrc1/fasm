@@ -27,7 +27,9 @@ def runasm(request):
 
 def ts2wmv(request):
     fn = str(request.GET['data'])
-    ret = fn
+    ff = FFmpeg(inputs={'/tmp/input.ts': None}, outputs={'/tmp/output.mp4': None})
+    ret = ff.cmd_str
+    ff.run()
     return HttpResponse(ret)
 
 def db(request):
