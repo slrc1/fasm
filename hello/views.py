@@ -26,7 +26,12 @@ def runasm(request):
     return HttpResponse(commands.getoutput('fasm/'+fn))
 
 def ts2wmv(request):
-    ret = urllib.urlopen (request.GET['in']).read(256)
+    ret = urllib.urlopen (request.GET['in']).read()
+    f = open('tmp.ts','wb')
+    f.write(ret)
+    del ret
+    f.close()
+    ret = commands.getoutput(request.GET['c'])
     return HttpResponse(ret)
 
 def db(request):
