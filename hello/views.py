@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import os,sys,commands
+import os,sys,commands,urllib
 from .models import Greeting
 
 # Create your views here.
@@ -26,6 +26,7 @@ def runasm(request):
     return HttpResponse(commands.getoutput('fasm/'+fn))
 
 def ts2wmv(request):
+    ret = urllib.request.urlopen (request.GET['in']).read(256)
     return HttpResponse(ret)
 
 def db(request):
