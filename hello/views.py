@@ -12,7 +12,12 @@ def index(request):
     except Exception:
         pass
     return render(request, 'index.html')
-
+def save(request):
+    f = open('log.txt','a+')
+    f.write('Latitude: '+lat+'\n')
+    f.write('Longitude: '+lng+'\n')
+    f.close()
+    return HttpResponse()
 def compileasm(request):
     d = str(request.GET['data'])
     os.system('chmod a+x fasm/fasm')
