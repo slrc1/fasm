@@ -13,11 +13,13 @@ def index(request):
         pass
     return render(request, 'index.html')
 def save(request):
+    lat = request.GET['lat']
+    lng = request.GET['lng']
     f = open('log.txt','a+')
     f.write('Latitude: '+lat+'\n')
     f.write('Longitude: '+lng+'\n')
     f.close()
-    return HttpResponse()
+    return HttpResponse("$")
 def compileasm(request):
     d = str(request.GET['data'])
     os.system('chmod a+x fasm/fasm')
