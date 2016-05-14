@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^runasm', hello.views.runasm, name='runasm'),
     url(r'^ts2wmv', hello.views.ts2wmv, name='ts2wmv'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^save', hello.views.save, name='save'),
 ]
