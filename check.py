@@ -11,10 +11,6 @@ import random
 import mechanize
 import cookielib
   
-from datetime import datetime
-startTime = datetime.now()
-
-#do something
   
 GHT = '''
         +=======================================+
@@ -62,7 +58,7 @@ def attack(password):
      if log.find(login) == -1:
         print "\n\n\n [*] Password found .. !!"
         print "\n [*] Password : %s\n" % (password)
-        print datetime.now() - startTime
+        sys.exit(1)
   except KeyboardInterrupt:
         print "\n[*] Exiting program .. "
         sys.exit(1)
