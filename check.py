@@ -7,7 +7,7 @@
   
   
 import sys
-import random
+import random,os
 import mechanize
 import cookielib
   
