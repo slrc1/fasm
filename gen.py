@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import string,random,sys
 
 start = int(sys.argv[1])
