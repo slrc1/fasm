@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#### -*- coding: utf-8 -*-
 import string,random,sys
 
 start = int(sys.argv[1])
@@ -8,7 +8,7 @@ cnt = int(sys.argv[3])
 alphabet = string.letters[0:52]+string.digits+string.punctuation
 for count in range(cnt):
     p = ''
-    for x in range(len(alphabet)):
+    for x in range(len(alphabet)):
         c = alphabet[x]
         p += c
     print(p)
