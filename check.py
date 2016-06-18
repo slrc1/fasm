@@ -7,7 +7,7 @@
   
   
 import sys
-import random,os
+import random
 import mechanize
 import cookielib
   
@@ -34,7 +34,7 @@ print "# Hit CTRL+C to quit the program"
 print "# Use www.graph.facebook.com for more infos about your victim ^_^"
   
   
-email = os.argv[1]
+email = sys.argv[1]
   
 useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
   
@@ -80,7 +80,7 @@ def check():
        print "\n[*] Exiting program ..\n"
        sys.exit(1)
     try:
-        attack(os.argv[2])
+        attack(sys.argv[2])
     except KeyboardInterrupt:
         print "\n [*] Exiting program ..\n"
         sys.exit(1)
