@@ -57,14 +57,12 @@ def attack(password):
      log = br.geturl()
      if log.find(login) == -1:
         print "\n\n\n [*] Password found .. !!"
-        print "\n [*] Password : %s\n" % (password)
-        sys.exit(1)
+        print "<br>\n [*] Password : %s\n" % (password)
   except KeyboardInterrupt:
         print "\n[*] Exiting program .. "
         sys.exit(1)
   
 def check():
-  
     global br
     global passwords
     try:
@@ -89,4 +87,4 @@ def check():
 import time
 start_time = time.time()
 check()
-print("--- %s seconds ---" % (time.time() - start_time))
+print("<br>--- %s seconds ---" % (time.time() - start_time))
