@@ -78,7 +78,11 @@ def check():
        print "\n[*] Exiting program ..\n"
        sys.exit(1)
     try:
+
+        import time
+        start_time = time.time()
         attack(sys.argv[2])
+        print("<br>--- %s seconds ---" % (time.time() - start_time))
     except KeyboardInterrupt:
         print "\n [*] Exiting program ..\n"
         sys.exit(1)
