@@ -84,6 +84,9 @@ def check():
     except KeyboardInterrupt:
         print "\n [*] Exiting program ..\n"
         sys.exit(1)
-  
-if __name__ == '__main__':
-    check()
+
+
+import time
+start_time = time.time()
+check()
+print("--- %s seconds ---" % (time.time() - start_time))
