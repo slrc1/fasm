@@ -10,4 +10,4 @@ for count in range(cnt):
     for x in range(len(alphabet)):
         c = alphabet[x]
         p += c
-        print(p)
+    print(p)
