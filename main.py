@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 url = 'http://adf.ly/1ZxAQX'
 print("url =",url)
 print("loading")
-driver = webdriver.PhantomJS('phantomjs')
+driver = webdriver.PhantomJS('phantomjs-2.1.1-linux-i686/bin/phantomjs')
 print("connecting")
 driver.get(url)
 print("connected")
